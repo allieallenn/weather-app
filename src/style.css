@@ -62,6 +62,7 @@ body {
   border-style: none;
 }
 .tag {
+  text-align: center;
   display: block;
   margin: 0 auto;
 }
