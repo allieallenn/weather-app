@@ -61,3 +61,7 @@ body {
   border-color: rgb(205, 213, 224);
   border-style: none;
 }
+.tag {
+  display: block;
+  margin: 0 auto;
+}
