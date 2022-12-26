@@ -1,0 +1,63 @@
+body {
+  background: linear-gradient(
+    109.6deg,
+    rgb(78, 112, 157) 11.2%,
+    rgb(137, 164, 199) 65%,
+    rgb(205, 213, 224) 100.2%
+  );
+  height: 100vh;
+}
+
+.current {
+  text-align: center;
+  color: rgb(205, 213, 224);
+}
+.searchBar {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+.btn-primary {
+  background-color: rgb(205, 213, 224);
+  border-color: rgb(205, 213, 224);
+}
+.btn-primary:hover {
+  background-color: rgb(137, 164, 199);
+  border-color: rgb(137, 164, 199);
+}
+.btn-primary:focus {
+  background-color: rgb(78, 112, 157);
+}
+.search {
+  color: rgb(205, 213, 224);
+  border-style: none;
+}
+.fa-cloud-rain {
+  font-weight: 300px;
+}
+.rain {
+  font-size: 25px;
+  margin: 0 auto;
+}
+.tempRange {
+  font-size: 23px;
+}
+.card {
+  display: block;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.3);
+}
+.list-group-item {
+  background-color: transparent;
+}
+
+.float-right {
+  float: right;
+}
+
+.submit {
+  color: fieldText;
+  border-radius: 5px;
+  border-color: rgb(205, 213, 224);
+  border-style: none;
+}
