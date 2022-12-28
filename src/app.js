@@ -106,7 +106,7 @@ let apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial";
 
 function showTemp(response) {
   let h1 = document.querySelector(".currentTemp");
-  h1.innerHTML = `${Math.round(response.data.main.temp)}°F`;
+  h1.innerHTML = `${Math.round(response.data.main.temp)}`;
 }
 
 function showPosition(position) {
