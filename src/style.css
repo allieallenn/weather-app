@@ -12,6 +12,10 @@ body {
   text-align: center;
   color: rgb(205, 213, 224);
 }
+
+.units {
+  font-size: 25px;
+}
 .searchBar {
   text-align: center;
   margin: 0 auto;
@@ -33,15 +37,20 @@ body {
   border-style: none;
 }
 .fa-cloud-rain {
-  font-weight: 300px;
+  font-size: 25px;
 }
-.rain {
+.conditionIcon {
   font-size: 25px;
   margin: 0 auto;
 }
 .tempRange {
-  font-size: 23px;
+  font-size: var(--bs-body-font-size);
+  margin: 0 auto;
 }
+#humidity {
+  margin: 0 auto;
+}
+
 .card {
   display: block;
   margin: 0 auto;
@@ -64,5 +73,13 @@ body {
 .tag {
   text-align: center;
   display: block;
+  margin: 0 auto;
+}
+#currentCondition {
+  text-transform: capitalize;
+  margin: 10px;
+}
+.city {
+  font-size: 30px;
   margin: 0 auto;
 }
