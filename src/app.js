@@ -120,7 +120,7 @@ function showTemp(response) {
     response.data.wind.speed
   )} MPH`;
 }
-// unit conversion, wind speed, weather description, and weather icon are mandatory.
+// unit conversion weather icon are mandatory.
 function showPosition(position) {
   let h1 = document.querySelector("#searched-city");
   let long = position.coords.longitude;
@@ -128,14 +128,22 @@ function showPosition(position) {
   axios.get(`${apiUrl}&appid=${apiKey}&lat=${lat}&lon=${long}`).then(showTemp);
 }
 
-function displayFahreinheitTemp(event) {
+function displayFahrenheitTemp(event) {
   event.preventDefault();
-  let fahreinheitTemp = (14 * 9) / 5 + 32;
+  let fahrenheitTemp = (14 * 9) / 5 + 32;
   let tempElement = document.querySelector(".currentTemp");
-  tempElement.innerHTML = fahreinheitTemp;
+  tempElement.innerHTML = fahrenheitTemp;
+}
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector(".currentTemp");
+  tempElement.innerHTML = celsiusTemp;
 }
 
-let fahreinheitUnit = document.querySelector("#fahreinheit");
-fahreinheitUnit.addEventListener("submit", displayFahreinheitTemp);
+let celsiusTemp = document.querySelector("#celsius-link");
+celsiusTemp.addEventListener("click", displayCelsiusTemp);
+
+let fahrenheitTemp = document.querySelector("#fahrenheit-link");
+fahreinheitUnit.addEventListener("submit", displayFahrenheitTemp);
 
 navigator.geolocation.getCurrentPosition(showPosition);
