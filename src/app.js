@@ -105,15 +105,37 @@ let apiKey = "017d56650cd168d68067850318775d43";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial";
 
 function showTemp(response) {
-  let h1 = document.querySelector(".currentTemp");
-  h1.innerHTML = `${Math.round(response.data.main.temp)}`;
+  let temp = document.querySelector("#temp");
+  let city = document.querySelector("#searched-city");
+  let description = document.querySelector("#currentCondition");
+  let humidity = document.querySelector("#humidity");
+  let windSpeed = document.querySelector("#windSpeed");
+  // let icon = document.querySelector(".conditionIcon");
+  temp.innerHTML = `${Math.round(response.data.main.temp)}°`;
+  city.innerHTML = response.data.name;
+  console.log(response.data);
+  description.innerHTML = response.data.weather[0].description;
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  windSpeed.innerHTML = `Windspeed: ${Math.round(
+    response.data.wind.speed
+  )} MPH`;
 }
-
+// unit conversion, wind speed, weather description, and weather icon are mandatory.
 function showPosition(position) {
   let h1 = document.querySelector("#searched-city");
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
   axios.get(`${apiUrl}&appid=${apiKey}&lat=${lat}&lon=${long}`).then(showTemp);
 }
+
+function displayFahreinheitTemp(event) {
+  event.preventDefault();
+  let fahreinheitTemp = (14 * 9) / 5 + 32;
+  let tempElement = document.querySelector(".currentTemp");
+  tempElement.innerHTML = fahreinheitTemp;
+}
+
+let fahreinheitUnit = document.querySelector("#fahreinheit");
+fahreinheitUnit.addEventListener("submit", displayFahreinheitTemp);
 
 navigator.geolocation.getCurrentPosition(showPosition);

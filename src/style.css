@@ -14,7 +14,8 @@ body {
 }
 
 .units {
-  font-size: 25px;
+  font-size: 20px;
+  margin: 0 auto;
 }
 .searchBar {
   text-align: center;
@@ -81,5 +82,9 @@ body {
 }
 .city {
   font-size: 30px;
+  margin: 0 auto;
+}
+#temp {
+  font-size: 55px;
   margin: 0 auto;
 }
