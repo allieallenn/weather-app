@@ -26,7 +26,7 @@ function formatDate() {
 }
 
 let apiKey = "017d56650cd168d68067850318775d43";
-let apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial";
+let apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
 
 function search(event) {
   event.preventDefault();
@@ -93,25 +93,26 @@ function showPosition(position) {
   axios.get(`${apiUrl}&appid=${apiKey}&lat=${lat}&lon=${long}`).then(showTemp);
 }
 
-// function displayFahrenheitTemp(event) {
-//   event.preventDefault();
-//   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-//   let tempElement = document.querySelector(".currentTemp");
-//   tempElement.innerHTML = fahrenheitTemp;
-// }
-// function displayCelsiusTemp(event) {
-//   event.preventDefault();
-//   let tempElement = document.querySelector(".currentTemp");
-//   tempElement.innerHTML = celsiusTemp;
-// }
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
 
-// let celsiusTemp = null;
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
 
-// let celsiusUnit = document.querySelector("#celsius-link");
-// celsiusTemp.addEventListener("click", displayCelsiusTemp);
+let celsiusTemp = null;
 
-// let fahrenheitUnit = document.querySelector("#fahrenheit-link");
-// fahrenheitTemp.addEventListener("click", displayFahrenheitTemp);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
