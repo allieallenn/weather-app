@@ -45,6 +45,10 @@ function showTemp(response) {
   let humidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#windSpeed");
   let iconElement = document.querySelector("#conditionIcon");
+  let tempMax0 = document.querySelector("#day-0-high");
+  let tempLow0 = document.querySelector("#day-0-low");
+  tempMax0.innerHTML = `H:${Math.round(response.data.main.temp_max)}`;
+  tempLow0.innerHTML = `L:${Math.round(response.data.main.temp_min)}`;
   temp.innerHTML = `${Math.round(response.data.main.temp)}°`;
   city.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].main;
