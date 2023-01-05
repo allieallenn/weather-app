@@ -27,6 +27,7 @@ function formatDate() {
 
 let apiKey = "017d56650cd168d68067850318775d43";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
+let celsiusTemp = null;
 
 function search(event) {
   event.preventDefault();
@@ -46,6 +47,7 @@ function showTemp(response) {
   let iconElement = document.querySelector("#conditionIcon");
   let tempMax0 = document.querySelector("#day-0-high");
   let tempLow0 = document.querySelector("#day-0-low");
+  celsiusTemp = Math.round(response.data.main.temp);
   tempMax0.innerHTML = `H:${Math.round(response.data.main.temp_max)}`;
   tempLow0.innerHTML = `L:${Math.round(response.data.main.temp_min)}`;
   temp.innerHTML = `${Math.round(response.data.main.temp)}°`;
@@ -60,8 +62,6 @@ function showTemp(response) {
     getConditionIcons(response.data.weather[0].main)
   );
 }
-
-// unit conversion
 
 function getConditionIcons(weather) {
   const obj = {
@@ -92,21 +92,18 @@ function showPosition(position) {
   let lat = position.coords.latitude;
   axios.get(`${apiUrl}&appid=${apiKey}&lat=${lat}&lon=${long}`).then(showTemp);
 }
-
 function displayFahrenheitTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
+  tempElement.innerHTML = `${Math.round(fahrenheitTemp)}°`;
 }
 
 function displayCelsiusTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(celsiusTemp);
+  tempElement.innerHTML = `${Math.round(celsiusTemp)}°`;
 }
-
-let celsiusTemp = null;
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
