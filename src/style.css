@@ -12,11 +12,6 @@ body {
   text-align: center;
   color: rgb(205, 213, 224);
 }
-
-.units {
-  font-size: 20px;
-  margin: 0 auto;
-}
 .searchBar {
   text-align: center;
   margin: 0 auto;
@@ -37,9 +32,6 @@ body {
   color: rgb(205, 213, 224);
   border-style: none;
 }
-.fa-cloud-rain {
-  font-size: 25px;
-}
 #conditionIcon {
   font-size: 25px;
   margin: 0 auto;
@@ -51,7 +43,6 @@ body {
 #humidity {
   margin: 0 auto;
 }
-
 .card {
   display: block;
   margin: 0 auto;
@@ -60,11 +51,14 @@ body {
 .list-group-item {
   background-color: transparent;
 }
-
 .float-right {
   float: right;
 }
-
+.units {
+  text-align: center;
+  font-size: 15px;
+  margin: 0 auto;
+}
 .submit {
   color: fieldText;
   border-radius: 5px;
@@ -82,10 +76,11 @@ body {
   font-size: 20px;
 }
 .city {
-  font-size: 30px;
+  font-size: 25px;
   margin: 0 auto;
 }
 #temp {
   font-size: 55px;
   margin: 0 auto;
+  text-align: center;
 }

@@ -25,7 +25,6 @@ function formatDate() {
   return new Date();
 }
 
-// api shit
 let apiKey = "017d56650cd168d68067850318775d43";
 let apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial";
 
@@ -96,7 +95,7 @@ function showPosition(position) {
 
 // function displayFahrenheitTemp(event) {
 //   event.preventDefault();
-//   let fahrenheitTemp = (14 * 9) / 5 + 32;
+//   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
 //   let tempElement = document.querySelector(".currentTemp");
 //   tempElement.innerHTML = fahrenheitTemp;
 // }
@@ -106,11 +105,13 @@ function showPosition(position) {
 //   tempElement.innerHTML = celsiusTemp;
 // }
 
-// let celsiusTemp = document.querySelector("#celsius-link");
+// let celsiusTemp = null;
+
+// let celsiusUnit = document.querySelector("#celsius-link");
 // celsiusTemp.addEventListener("click", displayCelsiusTemp);
 
-// let fahrenheitTemp = document.querySelector("#fahrenheit-link");
-// fahreinheitUnit.addEventListener("submit", displayFahrenheitTemp);
+// let fahrenheitUnit = document.querySelector("#fahrenheit-link");
+// fahrenheitTemp.addEventListener("click", displayFahrenheitTemp);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
