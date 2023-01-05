@@ -58,16 +58,27 @@ function showTemp(response) {
   );
 }
 
-// unit conversion weather icon are mandatory.
+// unit conversion
 
 function getConditionIcons(weather) {
   const obj = {
-    sain: "fa-solid fa-cloud-rain",
+    rain: "fa-solid fa-cloud-showers-heavy",
     sun: "fa-solid fa-sun",
-    clouds: "fa-solid fa-cloud-rain",
+    clouds: "fa-solid fa-cloud-sun",
+    clouds: "fa-solid fa-cloud-sun",
     thunderstorm: "fa-solid fa-cloud-bolt",
+    drizzle: "fa-solid fa-cloud-rain",
     snow: "fa-solid fa-snowflake",
     clear: "fa-solid fa-sun",
+    mist: "fa-solid fa-cloud-showers-heavy",
+    smoke: "fa-solid fa-smog",
+    smog: "fa-solid fa-smog",
+    fog: "fa-solid fa-smog",
+    haze: "fa-solid fa-smog",
+    dust: "fa-solid fa-smog",
+    sand: "fa-solid fa-smog",
+    ash: "fa-solid fa-volcano",
+    tornado: "fa-solid fa-tornado",
   };
   return obj[weather.toLowerCase()];
 }
