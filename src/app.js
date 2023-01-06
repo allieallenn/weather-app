@@ -56,7 +56,7 @@ function showTemp(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   windSpeed.innerHTML = `Windspeed: ${Math.round(
     response.data.wind.speed
-  )} MPH`;
+  )} Km/h`;
   iconElement.setAttribute(
     "class",
     getConditionIcons(response.data.weather[0].main)
