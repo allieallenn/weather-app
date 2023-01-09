@@ -38,8 +38,7 @@
     <section class="current">
       <p id="currentDate"></p>
       <h1 class="city" id="searched-city">Dallas, Tx</h1>
-      <h1 id="temp">60°</h1>
-      <small class="units"><a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a></small>
+      <h1 id="temp">60°F</h1>
       <div>
       <i id="conditionIcon"></i>
       <span id="conditionDescription">Rain</span>
@@ -47,16 +46,20 @@
       <div id="weatherInfo">
         <span class="tempRange" id="day-0-high">H:45°</span> <span class="tempRange" id="day-0-low">L:40°</span>
         <p id="humidity">Humidity: 20%</p>
-        <p id="windSpeed">Windspeed: 24 Km/h</p>
+        <p id="windSpeed">Windspeed: 24 MPH</p>
       </div>
     </section>
 
-    <div class="card" style="width: 30rem">
+    <div class="card" style="width: 30rem" id="forecast">
       <div class="card-header">
         5 Day Forecast
         <i class="fa-regular fa-calendar-days"></i>
       </div>
       <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="day-0">
+          Today <span class="float-right"><span id="day-0-min">38°</span><span id="day-0-max">/49°</span>
+          <i class="fa-solid fa-cloud-showers-heavy float-right" id="day-0-icon"></i>
+        </li>
         <li class="list-group-item" id="day-1">
           Tuesday <span class="float-right"><span id="day-1-min">38°</span><span id="day-1-max">/49°</span>
           <i class="fa-solid fa-cloud-showers-heavy float-right" id="day-1-icon"></i>
