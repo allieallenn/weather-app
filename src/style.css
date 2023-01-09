@@ -54,11 +54,6 @@ body {
 .float-right {
   float: right;
 }
-.units {
-  text-align: center;
-  font-size: 15px;
-  margin: 0 auto;
-}
 .submit {
   color: fieldText;
   border-radius: 5px;
